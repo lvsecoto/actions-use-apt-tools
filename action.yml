@@ -37,7 +37,7 @@ runs:
             yes|workflow) cache="${{ inputs.cache }}" ;;
             *)            cache=no ;;
         esac
-        action_key="v0.2"
+        action_key="v0.3"
         given_key="${{ inputs.key }}"
         method="${{ inputs.method }}"
         tools="${{ inputs.tools }}"
