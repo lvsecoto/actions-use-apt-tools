@@ -46,7 +46,7 @@ runs:
         [ "$cache" == 'workflow' ] && key="$key-${{ github.run_id }}-${{ github.run_attempt }}"
         sed 's/^ *//' << END >> $GITHUB_OUTPUT
             cache=$cache
-            archive=$HOME/apt-$hash.tz
+            archive=$HOME/apt/$hash.tz
             key=$key
         END
 
@@ -54,7 +54,7 @@ runs:
       if: steps.setup.outputs.cache != 'no'
       uses: actions/cache@v4
       with:
-        path: ${{ steps.setup.outputs.archive }}
+        path: $HOME/apt/
         key:  ${{ steps.setup.outputs.key }}
 
     - id: extract
